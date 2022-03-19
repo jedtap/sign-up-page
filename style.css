@@ -8,8 +8,17 @@ body{
   padding: 0;
 }
 
+:root{
+  --main-white: #FFFEFC;
+  --brown-banner: rgba(89, 58, 0, 0.5);
+  --border-default: rgb(31, 31, 31);
+  --border-focus: rgba(89, 58, 0, 0.5);
+  --green-main: rgb(67, 131, 67);
+  --green-dark: rgb(39, 78, 39);
+}
+
 a{
-  color: #FFFEFC;
+  color: var(--main-white);
 }
 
 
@@ -28,8 +37,8 @@ a{
 }
 
 .logo{
-  background-color: rgba(89, 58, 0, 0.5);
-  color:#FFFEFC;
+  background-color: var(--brown-banner);
+  color: var(--main-white);
   font-size: 100px;
   font-family: 'Comic Neue', cursive, sans-serif;
 
@@ -47,8 +56,8 @@ a{
 }
 
 .credits{
-  background-color: rgba(89, 58, 0, 0.3);
-  color: #FFFEFC;
+  background-color: var(--brown-banner);
+  color: var(--main-white);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 
   display: flex;
@@ -60,7 +69,7 @@ a{
 /* Right side content */
 
 .content{
-  background-color: #FFFEFC;
+  background-color: var(--main-white);
   width: 65vw;
   height: 100vh;
 
@@ -74,6 +83,7 @@ a{
   color: rgb(31, 31, 31);
   padding: 10px;
   margin-top: 10vh;
+  margin-left: 10px;
 }
 
 .phrase{
@@ -89,19 +99,77 @@ a{
 
 .form-box{
   width: 65vw;
-  height: 30vh;
+  height: 25vh;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
-  display: flex;
+  padding: 20px 20px 30px 20px;
 
 }
 
-.outro{
-  width: 40vw;
-  height: 10vh;
-  background-color: orange;
-
+form{
+  width: 65vw;
+  
   display: flex;
+  flex-flow: row wrap;
+  gap: 15px;
+}
+
+.field{
+  display: flex;
+  flex-flow: column wrap;
+  gap: 5px;
+}
+
+label{
+  width: 23vw;
+  height: 15px;
+  text-transform: uppercase;
+  font-family: 'Lato', sans-serif;
+  font-size: 14px;
+  letter-spacing: 3px;
+}
+
+input{
+  width: 23vw;
+  font-size: 16px;
+  padding: 0.25rem;
+  border-radius: 5px;
+  border: 2px solid var(--border-default);
+  transition: 0.5s;
+  outline: none;
+}
+
+input:focus {
+  border: 2px solid var(--border-focus);
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.outro{
+  width: 20vw;
+}
+
+button{
+  border: 0;
+  background-color: var(--green-main);
+  color: white;
+  padding: 1rem;
+  width:200px;
+  border-radius: 5px;
+  text-transform: uppercase;
+  font-size: 18px;
+  margin-top: 50px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+button:hover{
+  background-color: var(--green-dark);
 }
  
