@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@1,700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-body{
+html, body{
   display: flex;
   border: 0;
   margin: 0;
@@ -9,16 +9,16 @@ body{
 }
 
 :root{
-  --main-white: #FFFEFC;
+  --white-main: #FFFEFC;
   --brown-banner: rgba(89, 58, 0, 0.5);
-  --border-default: rgb(31, 31, 31);
-  --border-focus: rgba(89, 58, 0, 0.5);
+  --black-border: rgb(31, 31, 31);
+  --brown-border: rgba(89, 58, 0, 0.5);
   --green-main: rgb(67, 131, 67);
   --green-dark: rgb(39, 78, 39);
 }
 
 a{
-  color: var(--main-white);
+  color: var(--white-main);
 }
 
 
@@ -29,7 +29,11 @@ a{
   background-size: cover;
 
   width: 35vw;
+  min-width: 359px;
   height: 100vh;
+  border: 0;
+  margin: 0;
+  padding: 0;
 
   display: flex;
   flex-flow: column wrap;
@@ -38,13 +42,15 @@ a{
 
 .logo{
   background-color: var(--brown-banner);
-  color: var(--main-white);
+  color: var(--white-main);
   font-size: 100px;
   font-family: 'Comic Neue', cursive, sans-serif;
 
   width: 100%;
   height: 25vh;
-  margin-top: 15vh;
+  margin: 15vh 0 0 0;
+  border: 0;
+  padding: 0;
 
   display: flex;
   justify-content: center;
@@ -57,8 +63,12 @@ a{
 
 .credits{
   background-color: var(--brown-banner);
-  color: var(--main-white);
+  color: var(--white-main);
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+  border: 0;
+  margin: 0 0 3vh 0;
+  padding: 0;
 
   display: flex;
   margin-top: auto;
@@ -69,21 +79,28 @@ a{
 /* Right side content */
 
 .content{
-  background-color: var(--main-white);
-  width: 65vw;
-  height: 100vh;
+  background-color: var(--white-main);
+  width: auto;
+  min-width: 665px;
+  height: auto;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
 
   display: flex;
   flex-flow: column nowrap;
 }
 
 .intro{
-  width: 50vw;
-  height: 25vh;
   color: rgb(31, 31, 31);
+
+  width: 50vw;
+  min-width: 665px;
+  height: 25vh;
+  border: 0;
   padding: 10px;
-  margin-top: 10vh;
-  margin-left: 10px;
+  margin: 10vh 0 0 10px;
 }
 
 .phrase{
@@ -98,18 +115,20 @@ a{
 }
 
 .form-box{
-  width: 65vw;
-  height: 25vh;
+  width: auto;
+  height: 15vh;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 
   padding: 20px 20px 30px 20px;
-
+  min-width: 665px;
+  border: 0;
+  margin: 0;
 }
 
 form{
   width: 65vw;
-  
+
   display: flex;
   flex-flow: row wrap;
   gap: 15px;
@@ -135,13 +154,13 @@ input{
   font-size: 16px;
   padding: 0.25rem;
   border-radius: 5px;
-  border: 2px solid var(--border-default);
+  border: 2px solid var(--black-border);
   transition: 0.5s;
   outline: none;
 }
 
 input:focus {
-  border: 2px solid var(--border-focus);
+  border: 2px solid var(--brown-border);
 }
 
 input::-webkit-outer-spin-button,
@@ -154,16 +173,24 @@ input::-webkit-inner-spin-button {
   width: 20vw;
 }
 
+
+input:invalid:not(:focus):not(:placeholder-shown){
+  border: 2px solid red;
+}
+
+
 button{
-  border: 0;
   background-color: var(--green-main);
   color: white;
-  padding: 1rem;
-  width:200px;
-  border-radius: 5px;
-  text-transform: uppercase;
   font-size: 18px;
-  margin-top: 50px;
+  text-transform: uppercase;
+    
+  width:200px;
+  padding: 1rem;
+  margin: 20px 0 0 20px;
+  
+  border: 0;
+  border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
   transition: 0.5s;
@@ -172,4 +199,14 @@ button{
 button:hover{
   background-color: var(--green-dark);
 }
- 
+
+.existing{
+  border: 0;
+  margin: 0 0 0 20px;
+  font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+a[class="login"]{
+  color: var(--green-dark);
+  font-family: 'Lato', 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
